@@ -22,9 +22,8 @@ public:
 	}
 
 	int Create() {
-
 		Activate(m_active);
-		return m_active;
+		return m_active-1;
 	}
 
 	T& Get(int index) {

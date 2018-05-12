@@ -3,16 +3,17 @@
 
 class Entity;
 class Scene;
+class Component;
 
 class System {
-
+	friend class Entity;
 public:
-  System();
-  ~System();
+	System() {};
+	~System() {};
   
-  virtual int AddComponent(const Entity&) = 0;
-  virtual void Update(Scene&) = 0;
+	virtual void Update(Scene&) = 0;
 
 protected:
 
-}
+	virtual int AddComponent(Entity*, Component*) = 0;
+};
